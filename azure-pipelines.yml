@@ -17,6 +17,7 @@ jobs:
       echo "$(PERF_PROFILE)"
       echo "repoName   = $(repoName)"
       echo "branchName = $(branchName)"
+      printenv
 
     displayName: 'Perf Profile: env'
     condition: succeeded()
