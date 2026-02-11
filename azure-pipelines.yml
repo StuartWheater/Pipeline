@@ -1,0 +1,20 @@
+variables:
+  projectName: 'Pipeline'
+  datetime:    $[format('{0:yyyyMMddHHmmss}', pipeline.startTime)]
+  repoName:    $(Build.Repository.Name)
+  branchName:  $(Build.SourceBranchName)
+  PERF_PROFILE: 'azure-pipeline'
+
+jobs:
+- job: run_devtools_check
+  timeoutInMinutes: 120
+  pool:
+    vmImage: ubuntu-24.04
+
+  steps:
+  - bash: |
+
+      echo "$(PERF_PROFILE)" >> ~/.Rprofile
+
+    displayName: 'Tweak local R env using .Rprofile'
+    condition: succeeded()
