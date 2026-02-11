@@ -14,7 +14,9 @@ jobs:
   steps:
   - bash: |
 
-      echo "$(PERF_PROFILE)" >> ~/.Rprofile
+      echo "$(PERF_PROFILE)"
+      echo "repoName   = $(repoName)"
+      echo "branchName = $(branchName)"
 
-    displayName: 'Tweak local R env using .Rprofile'
+    displayName: 'Perf Profile: env'
     condition: succeeded()
