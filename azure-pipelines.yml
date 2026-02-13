@@ -19,7 +19,9 @@ jobs:
       echo "repoName   = $(repoName)"
       echo "branchName = $(branchName)"
       printenv
+      sudo R -q -e "base::Sys.getenv(PERF_PROFILE)"
       sudo R -q -e "base::Sys.getenv('PERF_PROFILE')"
+      sudo R -q -e "base::Sys.getenv(c('PERF_PROFILE'))"
 
     displayName: 'Perf Profile: env'
     condition: succeeded()
