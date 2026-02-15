@@ -1,9 +1,9 @@
 variables:
-  projectName: 'Pipeline'
-  datetime:    $[format('{0:yyyyMMddHHmmss}', pipeline.startTime)]
-  repoName:    $(Build.Repository.Name)
-  branchName:  $(Build.SourceBranchName)
-  PERF_PROFILE: 'azure-pipeline'
+  projectName:  'Pipeline'
+  datetime:     $[format('{0:yyyyMMddHHmmss}', pipeline.startTime)]
+  repoName:     $(Build.Repository.Name)
+  branchName:   $(Build.SourceBranchName)
+  perf.profile: 'azure-pipeline'
 
 jobs:
 - job: run_devtools_check
