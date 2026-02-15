@@ -21,6 +21,8 @@ jobs:
       echo "repoName   = $(repoName)"
       echo "branchName = $(branchName)"
       printenv
+      R -q -e "base::Sys.getenv('PERF_PROFILE')"
+      R -q -e "base::Sys.getenv(c('PERF_PROFILE'))"
       sudo R -q -e "base::Sys.getenv('PERF_PROFILE')"
       sudo R -q -e "base::Sys.getenv(c('PERF_PROFILE'))"
 
